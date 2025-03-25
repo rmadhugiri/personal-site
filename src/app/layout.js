@@ -2,6 +2,7 @@
 import { Varela } from "next/font/google";
 import './globals.css';
 import Header from "./header";
+import { Analytics } from "@vercel/analytics/react"
 
 const varela = Varela({ subsets: ["latin"], weight: ["400"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Header /> {/* Add the Header here so it appears on all pages */}
         <main>
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
