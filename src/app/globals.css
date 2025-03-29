@@ -6,360 +6,175 @@
 body, html {
     margin: 0;
     padding: 0;
-    background-color: #0A0A0A;
+    background-color: #fff;
+    font-family: 'Varela', sans-serif; /* Added font family globally */
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 20;
-    box-sizing: border-box;
-}
-
-/* Background Color for About Page */
-.navbar.has-background {
-    background: rgba(10, 10, 10, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-/* Responsive padding for smaller screens */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 10px 15px; /* Reduced padding on smaller screens */
-    }
-}
-
-/* Navigation links */
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Reduced gap to save space */
-    flex-wrap: wrap; /* Allow wrapping if needed */
-}
-
-.nav a {
-    text-decoration: none;
-    color: #FFF;
-    font-size: 15px;
-    letter-spacing: 0.03em;
-    line-height: 25px;
-    padding: 6px 10px; /* Reduced padding to prevent overflow */
-    transition: all 0.3s ease;
-    border-radius: 7px;
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Responsive font size and padding for smaller screens */
-@media (max-width: 768px) {
-    .nav a {
-        font-size: 14px;
-        padding: 5px 8px;
-    }
-}
-
-/* Glassmorphic Hover Effect for Nav Links */
-.nav a:hover {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for glass effect */
-    backdrop-filter: blur(5px); /* Subtle blur for frosted glass */
-    -webkit-backdrop-filter: blur(5px); /* For Safari support */
-    border-radius: 8px;
-    transition: all 0.2s ease-in-out;
-}
-
-.nav a:active {
-    transform: scale(0.97);
-}
-
-.nav .separator {
-    width: 1px;
-    height: 25px;
-    background-color: #FFF;
-}
-
-/* Sign up button */
-.nav .signup-button {
-    padding: 8px 12px;
-    font-size: 14px;
-    background-color: #FFF;
-    color: #1C2526;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.nav .signup-button:hover {
-    background-color: #E0E0E0;
-}
-
-.logo { 
-    height: 16px;
-    cursor: pointer;
-    margin-top: 5px;
-    margin-left: 5px;
-}
-
-.background {
-    width: 100%;
-    height: 100%;
+/* Your existing CSS classes remain unchanged */
+.lanyard-strap {
     position: absolute;
-    top: 0;
-    animation: fadeIn 1s ease-in forwards;
-    transform: rotate(180deg);
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 52px;
+    height: 160px;
+    background-color: #E31937;
+    z-index: 10;
+}
+
+.lanyard-latch {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 62px;
+    height: 43px;
+    background-color: #111;
+    border-radius: 6px;
+    z-index: 11;
+}
+
+.lanyard-connector {
+    position: absolute;
+    top: 103px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 26px;
+    background-color: #111;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 13;
+}
+
+.lanyard-cutout {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 62px;
+    height: 17px;
+    background-color: #fff;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    z-index: 12;
+}
+
+.badge-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: 708px;
+    border-radius: 45px;
+    background: #f6f6f6;
+    border: 1px solid #E8E8E8;
+    margin-top: 108px;
     z-index: 1;
 }
 
-/* Style for the text */
-.universe-text2 {
-    font-size: 40px;
-    background: #eee;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.badge-inner-box {
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 850px;
-    text-align: center;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-    z-index: 5;
-}
-
-/* Style for the text */
-.universe-text3 {
-    font-size: 30px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 850px;
-    text-align: center;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 1s;
-    opacity: 0;
-    z-index: 5;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Email container with glassmorphism */
-.email-container {
-    position: absolute;
-    bottom: 150px;
+    top: 45px;
     left: 50%;
     transform: translateX(-50%);
-    width: 380px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 535px;
+    height: 600px;
+    background-color: white;
+    border-radius: 40px;
+    z-index: 15;
+    display: flex; /* Added for centering content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    padding-top: 20px; /* Added some padding from top */
+}
+
+.profile-tile {
     display: flex;
-    align-items: center;
-    padding: 4px;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 1.5s;
-    opacity: 0;
-    z-index: 5;
+    align-items: start;
+    width: 85%;
+    padding: 30px 0; /* Add some vertical padding for the tile */
 }
 
-/* Clean, minimal email input */
-.email-input {
-    flex: 1;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding: 0 15px;
-    color: #ffffff;
-    font-size: 15px;
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px; /* Space between avatar and text */
 }
 
-.email-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Sophisticated send button */
-.send-button {
-    padding: 10px 25px;
-    background: rgba(255, 255, 255, 0.9);
-    margin-right: 2px;
-    color: #000000;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.send-button:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-}
-
-.send-button:active {
-    transform: scale(0.98);
-    background: rgba(255, 255, 255, 0.8);
-}
-
-/* Learn More Container */
-.learn-more-container {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 2s;
-    opacity: 0;
-}
-
-/* Learn More Link */
-.learn-more {
-    color: #3468ff;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out; /* Applies to all state changes */
-    display: inline-block; /* Ensures transform works on inline elements */
-}
-
-/* Hover State */
-.learn-more:hover {
-    color: #1e46bd;
-}
-
-/* Active State (Press Effect) */
-.learn-more:active {
-    transform: scale(0.95); /* Subtle scale for better visibility */
-    color: #0f2a7a; /* Optional: Darker color for feedback */
-}
-
-
-/* Blog Post Styles for About Page */
-.blog-container {
-    max-width: 700px;
+.avatar img {
     width: 100%;
-    color: #fff;
-    z-index: 5;
-    margin: 0 auto;
-    padding-top: 100px;
-    padding-bottom: 50px;
-   
+    height: 100%;
+    object-fit: cover;
 }
 
-.blog-title {
-    font-size: 30px;
-    color: #fff;
-    text-align: left;
-    animation: fadeIn 1s ease-in forwards;
-}
-
-.blog-body {
+.text-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    flex: 1; /* Take up remaining space between avatar and trailing elements */
 }
 
-.blog-text {
-    font-size: 16px;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-    line-height: 170%;
-    color: #ccc;
+.name {
+    font-size: 20px;
+    margin-bottom: 4px;
+    color: #3e3e3e;
 }
 
-.blog-list {
-    list-style-type: disc;
-    padding-left: 30px;
-    margin-bottom: 10px;
+.title {
+    font-size: 14px;
+    color: #5e5e5e;
 }
 
-.blog-list li {
-    font-size: 16px;
-    color: #ccc;
-    line-height: 170%;
-    margin-bottom: 10px;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 0.7s;
-    opacity: 0;
+.tagline-icons {
+    display: flex;
+    gap: 30px; /* Space between icons */
+    margin-top: 12px; /* Space between the tagline and icons */
+    justify-content: flex-start; /* Left-justify the icons */
+    align-items: center;
 }
 
-/* Squirrel Image on About Page */
-.squirrel { 
-    width: 45px; /* Fixed width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Make the image a block element for margin: 0 auto to work */
-    margin: 0 auto; /* Center horizontally with some vertical spacing */
-    z-index: 5;
-    padding-bottom: 50px;
-
-}
-
-/* Responsive adjustments for About page */
-@media (max-width: 768px) {
-    .blog-container {
-        max-width: 90%;
-    }
-
-    .blog-title {
-        font-size: 28px;
-    }
-
-    .blog-text {
-        font-size: 16px;
-    }
-
-    .blog-list li {
-        font-size: 16px;
-    }
+.tagline-icon {
+    height: 23px;
 }
 
 
-/* Responsive text adjustments */
-@media (max-width: 393px) {
-    .universe-text {
-        font-size: 24px;
-        width: 90%;
-    }
 
-    .universe-text2 {
-        font-size: 28px; /* Reduced from 35px for phone screens */
-        width: 90%;
-    }
-
-    .universe-text3 {
-        font-size: 20px; /* Reduced from 35px for phone screens */
-        width: 90%;
-    }
-
-    .email-container {
-        width: 90%;
-        max-width: 380px;
-    }
-
-    .learn-more {
-        font-size: 16px;
-    }
+.trailing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
+    gap: 10px; /* Space between slots and icons */
 }
 
+.slots-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.slots-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d4f4c7;
+    border-radius: 50%;
+}
+
+.slots-text {
+    font-size: 14px;
+    font-family: 'Varela', sans-serif;
+    color: #666;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

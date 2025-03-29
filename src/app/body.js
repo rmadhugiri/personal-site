@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Badge from "./components/badge";
 
 export default function Body() {
-
   return (
     <div>
-      <div className="universe-text2">Meet Rahul</div>
-      <div className="universe-text3">Entrepreneur</div>
-   
+      <Badge />
     </div>
   );
 }
